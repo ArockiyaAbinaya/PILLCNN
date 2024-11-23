@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <!-- Create multiple circles for background animation -->
+        <div class="circle" style="top: 20%; left: 30%; width: 100px; height: 100px;"></div>
+        <div class="circle" style="top: 50%; left: 70%; width: 150px; height: 150px;"></div>
+        <div class="circle" style="top: 80%; left: 10%; width: 80px; height: 80px;"></div>
+    </div>
+    <h1>Result</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="upload.html">Upload</a>
+    </nav>
+    <div class="content">
+        <div class="result" id="pill_result">
+            <h2>PillCNN Result</h2>
+            <img src="/static/img/temp.jpg" alt="Identified Pill">
+            <p><strong>Predicted Pill:</strong> {{ predicted_pill }}</p>
+            <p><strong>Benefits:</strong> {{ info.benefits }}</p>
+            <p><strong>Side Effects:</strong> {{ info.side_effects }}</p>
+            <p><strong>Dosage:</strong> {{ info.dosage }}</p>
+            <p><strong>Tablets:</strong> {{ info.tablets }}</p>
+        </div>
+    </div>
+</body>
+</html>

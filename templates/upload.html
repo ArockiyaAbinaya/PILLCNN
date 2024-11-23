@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <!-- Create multiple circles for background animation -->
+        <div class="circle" style="top: 20%; left: 30%; width: 100px; height: 100px;"></div>
+        <div class="circle" style="top: 50%; left: 70%; width: 150px; height: 150px;"></div>
+        <div class="circle" style="top: 80%; left: 10%; width: 80px; height: 80px;"></div>
+    </div>
+    <h1>Upload</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="upload.html">Upload</a>
+    </nav>
+    <div class="content">
+        <div class="section1" id="tablets_in_database">
+            <h2>Tablets in Our Dataset</h2>
+            <ul>
+                <li>Aceclofenac, Paracetamol & Serratiopeptidase</li>
+                <li>Itraconazole</li>
+                <li>Montelukast Sodium & Levocetirizine Hydrochloride</li>
+                <li>Paracetamol</li>
+                <li>Betahistine Hydrochloride</li>
+                <li>Dicylomine, Hydrochloride & Paracetamol</li>
+                <li>Indomethacin</li>
+                <li>Amoxycillin & Potassium Clavulanate</li>
+                <li>Pantoprazole Gastro-resistant</li>
+            </ul>
+        </div>
+        <div class="section upload-section" id="upload">
+            <h2>Upload Image</h2>
+            <p>Upload the pill image from your device. Backside of the strip should be clear and take with proper lighting.</p>
+            <form class="upload-form" action="/identify" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="static/img/*">
+                <br>
+                <br>
+                <button type="submit" class="upload-btn">Upload</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #0D1321; /* Dark background */
+    color: #FFFFFF; /* White text */
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Push it to the back */
+    background-image: url("/static/img/pillbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    animation: move 20s linear infinite alternate, scale 10s linear infinite alternate;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(calc(100% + 100vw), calc(100% + 100vh));
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2);
+    }
+}
+
+h1 {
+    font-size: 60px;
+    margin-top: 50px;
+    color: #FFD700; /* Gold */
+    text-shadow: 2px 2px 4px rgba(248, 244, 244, 0.789);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center; /* Center text alignment */
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #FFD700; /* Gold */
+    font-size: 24px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #FFA500; /* Orange on hover */
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover::before {
+    background-color: rgba(255, 165, 0, 0.1); /* Transparent orange on hover */
+}
+
+.content {
+    padding: 50px;
+    margin: 50px auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.person {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #7b7878; /* Black */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.person-info {
+    flex: 1; /* Take remaining space */
+    margin-right: 20px;
+}
+
+.person h2 {
+    color: #FF0000; /* Red */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.person p {
+    color: #FFFFFF; /* White */
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
